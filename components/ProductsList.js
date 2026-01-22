@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { wait } from '@/utils';
 
 const ProductsList = async ({ searchParams }) => {
   const { category } = await searchParams;
@@ -7,6 +8,8 @@ const ProductsList = async ({ searchParams }) => {
     : 'https://fakestoreapi.com/products'
   );
   const products = await response.json();
+
+  await wait(1000);
   
   return (
     <ul>
