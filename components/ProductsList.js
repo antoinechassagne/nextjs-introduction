@@ -3,9 +3,9 @@ import { wait } from '@/utils';
 
 const ProductsList = async ({ searchParams }) => {
   const { category } = await searchParams;
-  const response = await fetch(category
-    ? `https://fakestoreapi.com/products/category/${category}` 
-    : 'https://fakestoreapi.com/products'
+  const response = await fetch(category 
+      ? `http://localhost:3000/api/products/category/${encodeURIComponent(category)}` 
+      : 'http://localhost:3000/api/products'
   );
   const products = await response.json();
 

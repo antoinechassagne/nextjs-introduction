@@ -5,9 +5,7 @@ import Categories from '@/components/Categories';
 import ProductsList from '@/components/ProductsList';
 import ListSkeleton from '@/components/ListSkeleton';
 
-const Page = async ({ searchParams }) => {
-  console.log('Hello from products page');
-  
+const Page = async ({ searchParams }) => {  
   const { category } = await searchParams;
 
   // await wait(1000);
